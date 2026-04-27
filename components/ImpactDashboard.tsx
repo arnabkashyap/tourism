@@ -33,7 +33,7 @@ export const ImpactDashboard = () => {
 
       <div className="impact-quote">
         <Heart size={16} className="heart-icon" />
-        <p>"Your journey through Assam isn't just a trip; it's a lifeline for our community."</p>
+        <p>&quot;Your journey through Assam isn&apos;t just a trip; it&apos;s a lifeline for our community.&quot;</p>
       </div>
     </div>
   );
