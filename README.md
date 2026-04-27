@@ -2,7 +2,7 @@
 
 > **Empowering Northeast India's heritage through AI, community, and social impact.**
 
-![Heritage Threads Preview](https://raw.githubusercontent.com/arnabkashyap/tourism/main/NER-Heritage-MCP/frontend-threads/public/kaziranga_rhino_1777293860431.png)
+![Heritage Threads Preview](https://raw.githubusercontent.com/arnabkashyap/tourism/main/public/kaziranga_rhino_1777293860431.png)
 
 ## 🚀 Overview
 NER Heritage MCP is a specialized "Model Context Protocol" ecosystem designed to bridge the gap between ancient traditions and modern social networking. This platform focuses on **Assam**, featuring a cinematic "Threads-style" feed, service booking for local artisans, and an **Impact Dashboard** that tracks your contribution to local families.
@@ -20,10 +20,9 @@ NER Heritage MCP is a specialized "Model Context Protocol" ecosystem designed to
 - **Branding**: Nature-inspired palette featuring **Muga Silk Gold**, **Rhino Grey**, and **Jungle Green**.
 
 ## 🛠️ Getting Started
-The project is organized as a monorepo. The primary application is located in `NER-Heritage-MCP/frontend-threads`.
+The project is organized with the Next.js frontend at the root for seamless deployment.
 
 ```bash
-cd NER-Heritage-MCP/frontend-threads
 npm install
 npm run dev
 ```
@@ -31,10 +30,11 @@ npm run dev
 ## 📍 Project Structure
 ```text
 tourism/
-├── package.json (Root Workspace)
-├── vercel.json (Deployment Config)
+├── app/ (Next.js App)
+├── components/
+├── public/
+├── package.json
 └── NER-Heritage-MCP/
-    ├── frontend-threads/ (Main Next.js App)
     ├── backend-safety/    (Safety Layer)
     ├── backend-nlp/       (Language Layer)
     └── data-stores/      (Persistence Layer)
