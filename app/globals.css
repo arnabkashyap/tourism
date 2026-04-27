@@ -212,6 +212,23 @@ h1 {
   font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.post-submit-btn.btn-disabled {
+  background: var(--surface);
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.post-submit-btn.btn-active:hover {
+  background: var(--muga-gold);
+  transform: scale(1.05);
+}
+
+.post-submit-btn:active {
+  transform: scale(0.95);
 }
 
 /* Thread Card */
@@ -598,12 +615,56 @@ h1 {
   color: white;
 }
 
+/* Empty State Views */
+.empty-state-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px;
+  gap: 16px;
+  color: var(--muted);
+}
+
+.empty-state-view h3 {
+  color: var(--muga-gold);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Toast Notifications */
+.toast-notification {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--muga-gold);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  z-index: 1000;
+  pointer-events: none;
+}
+
 /* Animations */
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
 }

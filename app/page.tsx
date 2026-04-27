@@ -59,13 +59,19 @@ export default function HeritageHome() {
   const [isPosting, setIsPosting] = useState(false);
   const [token, setToken] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [view, setView] = useState<"feed" | "profile">("feed");
+  const [view, setView] = useState<"feed" | "profile" | "map" | "notifications">("feed");
+  const [showToast, setShowToast] = useState<string | null>(null);
 
   // Phase 2 States
   const [isServiceMode, setIsServiceMode] = useState(false);
   const [whatsappNumber, setWhatsappNumber] = useState("");
   const [price, setPrice] = useState("");
   const [selectedTag, setSelectedTag] = useState(MANDATORY_TAGS[0]);
+
+  const notify = (msg: string) => {
+    setShowToast(msg);
+    setTimeout(() => setShowToast(null), 3000);
+  };
 
   useEffect(() => {
     fetchFeed();
@@ -159,7 +165,21 @@ export default function HeritageHome() {
       </header>
 
       <main>
-        {view === "profile" ? (
+        {view === "map" ? (
+          <div className="empty-state-view">
+            <MapPin size={48} />
+            <h3>Heritage Map</h3>
+            <p>Interactive exploration of Assam's historical sites coming soon.</p>
+            <button onClick={() => setView('feed')} className="login-pill">Back to Feed</button>
+          </div>
+        ) : view === "notifications" ? (
+          <div className="empty-state-view">
+            <Heart size={48} />
+            <h3>Activity</h3>
+            <p>Your interactions and community updates will appear here.</p>
+            <button onClick={() => setView('feed')} className="login-pill">Back to Feed</button>
+          </div>
+        ) : view === "profile" ? (
           <div className="profile-section">
             <div className="user-profile-header">
               <div className="profile-avatar">
@@ -194,10 +214,10 @@ export default function HeritageHome() {
                 <div style={{ flex: 1 }}>
                   <textarea
                     className="post-textarea"
-                    placeholder={token ? "Share a story about Assam's heritage..." : "Login to share your stories..."}
+                    placeholder={token ? "Share a story about Assam's heritage..." : "Click 'Login' above to start sharing..."}
                     value={newPost}
                     onChange={(e) => setNewPost(e.target.value)}
-                    disabled={!token}
+                    onClick={() => !token && notify("Please login to post!")}
                   />
                   
                   {token && (
@@ -240,9 +260,13 @@ export default function HeritageHome() {
                       <Calendar size={18} />
                     </div>
                     <button 
-                      className="post-submit-btn" 
-                      onClick={handlePost}
-                      disabled={isPosting || !newPost.trim() || !token}
+                      className={`post-submit-btn ${(!newPost.trim() || !token) ? 'btn-disabled' : 'btn-active'}`} 
+                      onClick={() => {
+                        if (!token) notify("Login required!");
+                        else if (!newPost.trim()) notify("Write something first!");
+                        else handlePost();
+                      }}
+                      disabled={isPosting}
                     >
                       {isPosting ? "..." : "Post"}
                     </button>
@@ -322,11 +346,17 @@ export default function HeritageHome() {
 
       <nav className="bottom-nav">
         <button className={view === 'feed' ? 'active' : ''} onClick={() => setView('feed')}><HomeIcon size={24} /></button>
-        <button><MapPin size={24} /></button>
-        <div className="nav-plus">+</div>
-        <button><Heart size={24} /></button>
+        <button className={view === 'map' ? 'active' : ''} onClick={() => setView('map')}><MapPin size={24} /></button>
+        <div className="nav-plus" onClick={() => notify("Create Feature Coming Soon")}>+</div>
+        <button className={view === 'notifications' ? 'active' : ''} onClick={() => setView('notifications')}><Heart size={24} /></button>
         <button className={view === 'profile' ? 'active' : ''} onClick={() => setView('profile')}><User size={24} /></button>
       </nav>
+
+      {showToast && (
+        <div className="toast-notification animate-slide-up">
+          {showToast}
+        </div>
+      )}
 
     </div>
   );
