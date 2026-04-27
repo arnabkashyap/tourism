@@ -1,0 +1,12 @@
+{
+  "name": "tourism-root",
+  "private": true,
+  "workspaces": [
+    "NER-Heritage-MCP/frontend-threads"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=frontend-threads",
+    "dev": "npm run dev --workspace=frontend-threads",
+    "install": "npm install --workspace=frontend-threads"
+  }
+}
