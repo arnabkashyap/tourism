@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Heritage Threads | Social NER Platform",
-  description: "Connect with the past through AI-powered heritage discussions.",
+  title: "Heritage Threads | Assam Social Impact Platform",
+  description: "Experience cinematic Assam, support local heritage families, and preserve the culture of Northeast India through community discussion.",
 };
 
 export default function RootLayout({
