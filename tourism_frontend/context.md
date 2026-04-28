@@ -46,6 +46,10 @@ tourism_frontend/
 │   │   └── feed/           # Content-specific cards (ArtisanProfileCard, ExperienceCard)
 │   ├── context/            # React Context providers (Recommendation Engine, Auth, Theme)
 │   └── lib/                # Utilities and static data
+├── backend/                # Python backend services
+│   ├── mcp_server.py       # FastMCP server (analyze_weaving_feed)
+│   ├── websocket_mock.py   # FastAPI WebSocket (Live Metrics Stream)
+│   └── requirements.txt    # Python dependencies
 ├── public/                 # Static assets
 └── tsconfig.json           # TS configuration
 ```
