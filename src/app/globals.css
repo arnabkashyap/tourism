@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050805;
+  --color-foreground: #e0f2e9;
+  
+  --color-tactical-emerald: #10b981;
+  --color-tactical-green: #1a2e1a;
+  --color-tactical-accent: #10b981;
+  
+  --background-image-glass: linear-gradient(to bottom right, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  
+  --shadow-neon: 0 0 15px rgba(16, 185, 129, 0.3);
+  --shadow-neon-strong: 0 0 25px rgba(16, 185, 129, 0.5);
+}
+
+:root {
+  --background: #050805;
+  --foreground: #e0f2e9;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-lg border border-emerald-500/20 shadow-xl;
+}
+
+.neon-border {
+  @apply border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.2)];
+}
+
+.neon-text {
+  @apply text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.5)];
+}
+
+.hud-element {
+  @apply relative overflow-hidden;
+}
+
+.hud-element::after {
+  content: '';
+  @apply absolute inset-0 pointer-events-none border border-white/5;
+}
+
+/* Scrollbar styling for tactical look */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black/20;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-emerald-900/50 rounded-full;
+}
+
+@keyframes scan-line {
+  0% { top: 0; opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { top: 100%; opacity: 0.2; }
+}
+
+.scan-line {
+  @apply absolute left-0 right-0 h-1 bg-tactical-emerald shadow-[0_0_15px_#10b981] z-10;
+  animation: scan-line 2s linear infinite;
+}

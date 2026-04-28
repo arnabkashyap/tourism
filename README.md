@@ -1,44 +1,34 @@
-# 🌏 NER Heritage MCP: Assam Edition
+# NE Threads | Cultural Marketplace & Tourism
 
-> **Empowering Northeast India's heritage through AI, community, and social impact.**
+**NE Threads** is a high-fidelity tactical marketplace and cultural discovery platform. It connects users with authentic handloom artisans and immersive tourism experiences across Northeast India, utilizing an intelligent recommendation engine to prioritize master craftsmanship.
 
-![Heritage Threads Preview](https://raw.githubusercontent.com/arnabkashyap/tourism/main/public/kaziranga_rhino_1777293860431.png)
+## 🚀 Key Features
+- **Command Center Feed**: An AI-augmented feed prioritizing verified master craftsmen.
+- **Tactical HUD Navigation**: Integrated `TopBar` with dynamic category filters (Eco-Tours, Handloom, Local Stalls).
+- **Intelligent Sorting**: A `RecommendationEngine` that weights content based on user interaction and verification status.
+- **Priority Alpha System**: Automated HUD flags for high-match and verified recommendations.
+- **Artisan Verification**: Neon-pulsing HUD indicators for "Live" verification status.
 
-## 🚀 Overview
-NER Heritage MCP is a specialized "Model Context Protocol" ecosystem designed to bridge the gap between ancient traditions and modern social networking. This platform focuses on **Assam**, featuring a cinematic "Threads-style" feed, service booking for local artisans, and an **Impact Dashboard** that tracks your contribution to local families.
+## 🎨 Design System: "Antigravity Tactical"
+- **Aesthetic**: Premium Dark Mode HUD with Glassmorphism.
+- **Core Palette**: Tactical Emerald (`#10b981`), Tactical Green (`#1a2e1a`), and Deep Void (`#050805`).
+- **Interactive Details**: Scanning animations, backdrop blurs, and neon glow active states.
 
-## 🏗️ Architecture
-- **Frontend**: Next.js 15 (App Router) with Threads-inspired UI.
-- **Backend Safety**: Guardrails for heritage discussions.
-- **Backend NLP**: Semantic processing of Northeast Region dialects.
-- **Data Stores**: Distributed storage for heritage media and artifacts.
+## 🛠️ Tech Stack
+- **Framework**: Next.js 16 (App Router)
+- **Library**: React 19
+- **Styling**: Tailwind CSS v4 (using `@theme` variables)
+- **Icons**: Lucide React
 
-## ✨ Key Features
-- **Cinematic Heritage Feed**: Vertical scrolling feed with high-quality imagery of Majuli, Kaziranga, and Sivasagar.
-- **Social Impact Dashboard**: Visual metrics showing how your bookings support local families and preserve heritage sites.
-- **Verified Artisans**: Direct connection to local service providers (weaving, pottery, guided tours) via WhatsApp.
-- **Branding**: Nature-inspired palette featuring **Muga Silk Gold**, **Rhino Grey**, and **Jungle Green**.
+## 🏁 Getting Started
 
-## 🛠️ Getting Started
-The project is organized with the Next.js frontend at the root for seamless deployment.
+First, run the development server:
 
 ```bash
-npm install
 npm run dev
 ```
 
-## 📍 Project Structure
-```text
-tourism/
-├── app/ (Next.js App)
-├── components/
-├── public/
-├── package.json
-└── NER-Heritage-MCP/
-    ├── backend-safety/    (Safety Layer)
-    ├── backend-nlp/       (Language Layer)
-    └── data-stores/      (Persistence Layer)
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the live HUD.
 
 ---
-*Built with ❤️ for the people of Assam.*
+*Built with Antigravity Tactical Design Standards.*
